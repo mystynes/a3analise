@@ -33,8 +33,8 @@ fig_junto.add_trace(go.Scatter(x=df_gold_close['date'], y=df_gold_close['close']
 fig_junto.update_layout(
     xaxis_title='Data',
     yaxis=dict(title='ÍNDICE DO DÓLAR', titlefont=dict(color='#1f77b4'), tickfont=dict(color='#1f77b4')),
-    yaxis2=dict(title='HISTÓRICO XAUUSD', titlefont=dict(color='#ff7f0e'), tickfont=dict(color='#ff7f0e')),
-    legend=dict(x=0.5, y=0.5)
+    yaxis2=dict(title='HISTÓRICO XAUUSD', titlefont=dict(color='#ff7f0e'), tickfont=dict(color='#ff7f0e'), overlaying='y', side='right'),
+    legend=dict(x=0.1, y=0.9)
 )
 # configura app dash
 app = Dash(__name__)
@@ -51,7 +51,7 @@ app.layout = html.Div([ # componente principal
         dcc.Graph(figure=fig_gold)],
         style={'width':'50%','display':'inline-block'}),
     
-    html.Div([ # componente gold
+    html.Div([ # componente inferência
         html.H1(children='INFERÊNCIA', style={'text-align': 'center'}),
         dcc.Graph(figure=fig_junto)],
         style={'width':'100%','display':'block'})
