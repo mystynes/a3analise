@@ -1,7 +1,9 @@
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objs as go
-from dash import Dash, html, dcc
+import dash
+import dash_core_components as dcc
+import dash_html_components as html
 
 df_dxy = pd.read_csv('dxy_daily_2023_marketwatch.csv')
 df_gold = pd.read_csv('gold_daily_2023_metaquotesdemo.csv')
