@@ -55,7 +55,7 @@ fig_junto.update_layout(
     legend=dict(x=0.5, y=0.5)
 )
 # configuração plotagem via dash
-app = Dash(__name__)
+app = dash(__name__)
 
 fig_dxy = px.line(df_dxy_close, x="date", y="close")
 fig_gold = px.line(df_gold_close, x="date", y="close")
